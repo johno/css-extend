@@ -1,7 +1,9 @@
 'use strict';
 
-module.exports = function reworkExtend(options) {
+module.exports = function cssExtend(options) {
   options = options || {};
 
-  return true;
+  return function cssExtend(css) {
+    return css;
+  };
 }

@@ -1,20 +1,19 @@
 var assert = require('assert');
-var rework = require('rework');
 var fs = require('fs');
-var reworkExtend = require('..');
+var cssExtend = require('..');
 
-describe('rework-extend', function() {
+describe('css-extend', function() {
 
   it('parses chained extends properly', function() {
-    var output = rework(fixture('a.css')).use(reworkExtend()).toString().trim();
-    var expected = fixture('a.css.expected');
+    var output = cssExtend(fixture('a.css'));
+    var expected = fixture('a.expected.css');
 
     assert.equal(output, expected);
   });
 
   it('parses extends correctly', function() {
-    var output = rework(fixture('b.css')).use(reworkExtend()).toString().trim();
-    var expected = fixture('b.css.expected');
+    var output = cssExtend(fixture('b.css'));
+    var expected = fixture('b.expected.css');
 
     assert.equal(output, expected);
   });
